@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakobaya <hakobaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 07:04:18 by hakobaya          #+#    #+#             */
-/*   Updated: 2023/09/25 07:05:51 by hakobaya         ###   ########.fr       */
+/*   Created: 2023/09/25 07:01:06 by hakobaya          #+#    #+#             */
+/*   Updated: 2023/09/25 07:16:58 by hakobaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define LIBFT_H
+#include "libft.h"
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+size_t	ft_strlen(char const *s)
+{
+	size_t	len;
 
-size_t	ft_strlen(char const *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdup(const char *s1);
+	len = 0;
+	while (*s)
+	{
+		s++;
+		len++;
+	}
+	return (len);
+}
+
+//int	main(void)
+//{
+//	const char	*s = "dfghjk";
+
+//	printf("%zu\n", ft_strlen(s));
+//}

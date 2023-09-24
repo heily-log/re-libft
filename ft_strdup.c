@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hakobaya <hakobaya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 06:38:08 by hakobaya          #+#    #+#             */
-/*   Updated: 2023/09/25 07:17:11 by hakobaya         ###   ########.fr       */
+/*   Created: 2023/09/25 06:58:16 by hakobaya          #+#    #+#             */
+/*   Updated: 2023/09/25 07:17:36 by hakobaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strdup(const char *s1)
 {
 	char	*dst;
 	char	*head;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 		return (NULL);
-	dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (dst == NULL)
 		return (NULL);
 	head = dst;
 	while (*s1)
 		*dst++ = *s1++;
-	while (*s2)
-		*dst++ = *s2++;
 	*dst = '\0';
 	return (head);
 }
 
-//int	main(void)
-//{
-//	char	*ret;
-//	char const *s1 = "sdfgh";
-//	char const *s2 = "yutgvhkj";
+int	main(void)
+{
+	char		*ret;
+	char const	*s1 = "dfgh";
 
-//	ret = ft_strjoin(s1, s2);
-//	printf("%s\n", ret);
-//}
+	ret = ft_strdup(s1);
+	printf("%s\n", ret);
+}
